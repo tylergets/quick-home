@@ -12,7 +12,7 @@ const { data, pending } = await useFetch('/api/system')
       <div class="bg-slate-700 px-4 py-1 rounded-sm">
         <div class="flex gap-2">
           <div class="font-bold text-slate-400">HOST</div>
-          <div>{{data.hostname}}%</div>
+          <div>{{data.hostname}}</div>
         </div>
       </div>
 

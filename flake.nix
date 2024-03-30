@@ -9,6 +9,7 @@
   outputs = { self, flake-utils, nixpkgs }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     nixosModules.quick-home = import ./service.nix self;
+
   } // flake-utils.lib.eachDefaultSystem (system:
     let pkgs = nixpkgs.legacyPackages.${system}; in
     {
@@ -31,6 +32,12 @@
           };
         };
         default = quick-home;
+        docker = pkgs.dockerTools.buildLayeredImage {
+              name = "quick-home";
+              tag = "latest";
+              contents = [ self.nixosModules.quick-home ];
+              config.Cmd = "${self.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/quick-home";
+        };
       };
     });
 }
