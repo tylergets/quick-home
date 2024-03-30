@@ -1,0 +1,6 @@
+.direnv/
+result/
+.nuxt/
+node_modules/
+.output/
+.idea/
