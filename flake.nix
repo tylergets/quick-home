@@ -33,9 +33,9 @@
         };
         default = quick-home;
         docker = pkgs.dockerTools.buildLayeredImage {
-              name = "quick-home";
+              name = "ghcr.io/tylergets/quick-home";
               tag = "latest";
-              contents = [ self.nixosModules.quick-home ];
+              contents = [ self.packages.x86_64-linux.quick-home ];
               config.Cmd = "${self.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/quick-home";
         };
       };
