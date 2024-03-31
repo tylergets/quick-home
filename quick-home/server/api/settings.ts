@@ -1,6 +1,8 @@
 import * as fs from "fs";
 import {serializeError, deserializeError} from 'serialize-error';
 import os from "os";
+import {getSettingsPath} from "~/helpers";
+import YAML from 'yaml'
 
 String.prototype.toProperCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -8,26 +10,8 @@ String.prototype.toProperCase = function () {
 
 export default defineEventHandler(async (event) => {
 
-    // TODO Move function to a helper file
-
-    const possiblePaths = [
-        process.env.QUICK_HOME_SETTINGS ?? null,
-        os.homedir() + "/.config/quickHome/settings.json",
-        os.homedir() + "/.quickHome/settings.json",
-        "/etc/quickHome/settings.json",
-    ].filter((path) => !!path);
-
-    function getPath() {
-        for (const path of possiblePaths) {
-            if (path && fs.existsSync(path)) {
-                return path;
-            }
-        }
-        return null;
-    }
-
     try {
-        const path = getPath();
+        const path = getSettingsPath();
         if (!path) {
             console.log("No settings file found");
             return {
@@ -40,7 +24,7 @@ export default defineEventHandler(async (event) => {
             console.log("Settings file found at: ", path);
         }
 
-        let data = await fs.promises.readFile(path, "utf-8").then((d) => JSON.parse(d));
+        let data = await fs.promises.readFile(path, "utf-8").then((d) => YAML.parse(d));
 
         if (data.items) {
             data.items = data.items.map((item) => {

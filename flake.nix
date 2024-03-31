@@ -19,7 +19,7 @@
           version = "0.1.0";
 
           src = ./quick-home;
-          npmDepsHash = "sha256-BOPPfVlbrOZ07//Iv0x3wqEia5Z/PQ0T4V8r+TEKcTY=";
+          npmDepsHash = "sha256-WHKrNwuk8inAbaE6ihvrnaxncvGmdEF1q5XPbkCH4bA=";
 
           # The prepack script runs the build script, which we'd rather do in the build phase.
           npmPackFlags = [ "--ignore-scripts" ];
