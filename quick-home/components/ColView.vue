@@ -6,6 +6,7 @@ const props = defineProps({
 const columnsWithItems = computed(() => {
   const columnCount = props.data.columns;
   const items = props.data.items;
+  if(!items) return []
   // split items into columns evenly
   return items.reduce((acc, item, index) => {
     const columnIndex = index % columnCount;

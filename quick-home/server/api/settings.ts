@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import {serializeError, deserializeError} from 'serialize-error';
+import os from "os";
 
 String.prototype.toProperCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -7,13 +8,38 @@ String.prototype.toProperCase = function () {
 
 export default defineEventHandler(async (event) => {
 
-    // TODO Move to a function
-    let path = "/etc/quickHome/settings.json";
-    if (process.env.QUICK_HOME_SETTINGS) {
-        path = process.env.QUICK_HOME_SETTINGS;
+    // TODO Move function to a helper file
+
+    const possiblePaths = [
+        process.env.QUICK_HOME_SETTINGS ?? null,
+        os.homedir() + "/.config/quickHome/settings.json",
+        os.homedir() + "/.quickHome/settings.json",
+        "/etc/quickHome/settings.json",
+    ].filter((path) => !!path);
+
+    function getPath() {
+        for (const path of possiblePaths) {
+            if (path && fs.existsSync(path)) {
+                return path;
+            }
+        }
+        return null;
     }
 
     try {
+        const path = getPath();
+        if (!path) {
+            console.log("No settings file found");
+            return {
+                error: "No settings file found",
+                failed: true,
+                path,
+            }
+
+        } else {
+            console.log("Settings file found at: ", path);
+        }
+
         let data = await fs.promises.readFile(path, "utf-8").then((d) => JSON.parse(d));
 
         if (data.items) {
@@ -47,16 +73,25 @@ export default defineEventHandler(async (event) => {
                     ...item,
                 };
             });
+        } else {
+            return {
+                failed: true,
+                error: "No items found in settings file",
+                path,
+            }
         }
-
-        return data;
+        return {
+            ...data,
+            path
+        };
     } catch (e) {
         console.log(e);
-        return {
-            error: serializeError(e),
-            path,
-            failed: true,
-        }
+        throw e;
+        // return {
+        //     error: serializeError(e),
+        //     path,
+        //     failed: true,
+        // }
     }
 
 })
