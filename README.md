@@ -12,31 +12,27 @@ Highly opinionated dashboard for your home server. Inspired by all the existing 
  * Groupings
  * Tabs / Multiple Pages
 
-## Configuration (JSON)
+## Configuration (YAML)
 
-```json
-{
-  "title": "Hello World",
-  "subtitle": "This is a subtitle",
-  "columns": 3,
-  "services": {
-    // used with shorthand
-    "url_template": "https://$name$.example.com"
-  },
-  "items": [
-    "sonarr", // shorthand for {"service": "sonarr" }
-    // full example
-    {
-      "name": "radarr",
-      "icon": "di:radarr",
-      "url": "https://radarr.example.com",
-      "target": "_blank"
-    }
-  ]
-}
+```yaml
+title: Hello World
+subtitle: This is a subtitle
+columns: 3
+services:
+  # used for shorthands
+  url_template: https://$name$.example.com
+items:
+    # this is a shorthand for
+    # - service: sonarr
+    - sonarr
+    - name: radarr
+      icon: di:radarr
+      url: https://radarr.example.com
+      target: _blank
+
 ```
 
-YAML is also supported.
+JSON is also supported.
 
 ## Install (Nixos)
 
@@ -63,4 +59,18 @@ services.quickHome = {
 
 ## Install (Docker)
 
-Coming soon
+```bash
+docker run --rm -v /local/path/to/folder:/etc/quickHome -p 3000:3000 ghcr.io/tylergets/quick-home
+```
+
+### Docker Compose
+
+```yaml
+services:
+  quick-home:
+    image: ghcr.io/tylergets/quick-home
+    volumes:
+      - /local/path/to/folder:/etc/quickHome
+    ports:
+      - 3000:3000
+```

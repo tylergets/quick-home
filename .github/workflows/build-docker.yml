@@ -28,4 +28,3 @@ jobs:
 
       - name: Push Container
         run: docker push ghcr.io/tylergets/quick-home:latest
-        
