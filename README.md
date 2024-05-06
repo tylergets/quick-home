@@ -11,6 +11,8 @@ Highly opinionated dashboard for your home server. Inspired by all the existing 
 ### Future Features
  * Groupings
  * Tabs / Multiple Pages
+ * Dark mode
+ * Theme Support
 
 ## Configuration (YAML)
 

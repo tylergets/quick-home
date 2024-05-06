@@ -7,6 +7,7 @@ export function getPossiblePaths() {
         os.homedir() + "/.config/quickHome/settings.{json,yaml,yml}",
         os.homedir() + "/.quickHome/settings.{json,yaml,yml}",
         "/etc/quickHome/settings.{json,yaml,yml}",
+        "settings.json"
     ].filter((path) => !!path);
 
     possiblePaths = possiblePaths.flatMap((path) => {
