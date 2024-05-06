@@ -1,48 +1,341 @@
 {
-  "title": "Homepage Example",
-  "subtitle": "This is an example, customize it for your own needs",
-  "columns": 4,
-  "services": {
-    "url_template": "https://$name$.ragtag.club",
-    "target": "_blank"
-  },
+  "columns": 3,
   "items": [
     {
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/home-assistant.png",
       "name": "Home Assistant",
-      "icon": "di:home-assistant",
-      "url": "https://home.tyler.fail",
-      "target": "_blank"
+      "target": "_blank",
+      "url": "https://home.tyler.fail"
     },
-    "jellyfin",
-    "jellyseerr",
-    "unifi",
-    "sonarr",
-    "radarr",
-    "prowlarr",
-    "zigbee2mqtt",
-    "node-red",
-    "qbittorrent",
-    "esphome",
-    "headphones",
-    "metabase",
-    "paperless",
-    "gatus",
-    "homer",
-    "ntfy",
-    "grafana",
-    "microbin",
     {
-      "service": "openwebrx",
-      "icon": "https://github.com/jketterl/openwebrx/blob/develop/htdocs/gfx/openwebrx-avatar.png?raw=true"
+      "name": "Jellyfin",
+      "url": "https://jellyfin.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/jellyfin.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "jellyfin"
     },
-    "adminer",
-    "miniflux",
-    "prometheus",
     {
+      "name": "Jellyseerr",
+      "url": "https://jellyseerr.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/jellyseerr.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "jellyseerr"
+    },
+    {
+      "name": "Unifi",
+      "url": "https://unifi.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/unifi.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "unifi"
+    },
+    {
+      "name": "Betanin",
+      "category": "Test",
+      "url": "https://betanin.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/betanin.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "betanin"
+    },
+    {
+      "name": "Sonarr",
+      "category": "Downloaders",
+      "url": "https://sonarr.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/sonarr.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "sonarr"
+    },
+    {
+      "name": "Romt",
+      "url": "https://romt.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/romt.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "romt"
+    },
+    {
+      "name": "Znc",
+      "url": "https://znc.ragtag.club",
+      "category": "Chat",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/znc.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "znc"
+    },
+    {
+      "name": "Adguard-home",
+      "url": "https://adguard-home.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/adguard-home.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "adguard-home"
+    },
+    {
+      "name": "Radarr",
+      "url": "https://radarr.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/radarr.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "radarr"
+    },
+    {
+      "name": "Plausible",
+      "url": "https://plausible.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/plausible.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "plausible"
+    },
+    {
+      "name": "Prowlarr",
+      "url": "https://prowlarr.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/prowlarr.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "prowlarr"
+    },
+    {
+      "name": "Vuetorrent",
+      "url": "https://vuetorrent.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/vuetorrent.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "vuetorrent"
+    },
+    {
+      "name": "Apprise",
+      "url": "https://apprise.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/apprise.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "apprise"
+    },
+    {
+      "name": "Cockpit",
+      "category": "Test",
+      "url": "https://cockpit.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/cockpit.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "cockpit"
+    },
+    {
+      "name": "Zigbee2mqtt",
+      "category": "Home Automation",
+      "url": "https://zigbee2mqtt.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/zigbee2mqtt.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "zigbee2mqtt"
+    },
+    {
+      "name": "Node-red",
+      "category": "Home Automation",
+
+      "url": "https://node-red.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/node-red.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "node-red"
+    },
+    {
+      "category": "Downloaders",
+      "name": "Qbittorrent",
+      "url": "https://qbittorrent.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/qbittorrent.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "qbittorrent"
+    },
+    {
+      "name": "Holdon",
+      "url": "https://holdon.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/holdon.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "holdon"
+    },
+    {
+      "name": "Esphome",
+      "url": "https://esphome.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/esphome.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "esphome"
+    },
+    {
+      "name": "Radio-web",
+      "url": "https://radio-web.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/radio-web.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "radio-web"
+    },
+    {
+      "name": "Searx",
+      "url": "https://searx.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/searx.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "searx"
+    },
+    {
+      "name": "Headphones",
+      "url": "https://headphones.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/headphones.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "headphones"
+    },
+    {
+      "name": "Navidrome",
+      "url": "https://navidrome.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/navidrome.png",
+      "target": "_blank",
+      "category": "Media",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "navidrome"
+    },
+    {
+      "name": "Metabase",
+      "url": "https://metabase.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/metabase.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "metabase"
+    },
+    {
+      "name": "Paperless",
+      "url": "https://paperless.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/paperless.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "paperless"
+    },
+    {
+      "name": "Gatus",
+      "url": "https://gatus.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/gatus.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "gatus"
+    },
+    {
+      "name": "Lidarr",
+      "url": "https://lidarr.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/lidarr.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "lidarr"
+    },
+    {
+      "name": "Alertmanager",
+      "url": "https://alertmanager.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/alertmanager.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "alertmanager"
+    },
+    {
+      "name": "Homer",
+      "url": "https://homer.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/homer.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "homer"
+    },
+    {
+      "name": "Ntfy",
+      "url": "https://ntfy.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/ntfy.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "ntfy"
+    },
+    {
+      "name": "Grafana",
+      "url": "https://grafana.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/grafana.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "grafana"
+    },
+    {
+      "name": "Microbin",
+      "url": "https://microbin.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/microbin.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "microbin"
+    },
+    {
+      "name": "Openwebrx",
+      "url": "https://openwebrx.ragtag.club",
+      "icon": "https://github.com/jketterl/openwebrx/blob/develop/htdocs/gfx/openwebrx-avatar.png?raw=true",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "openwebrx"
+    },
+    {
+      "name": "Slskd",
+      "url": "https://slskd.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/slskd/slskd/master/etc/icon.svg",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "slskd"
+    },
+    {
+      "name": "Adminer",
+      "url": "https://adminer.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/adminer.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "adminer"
+    },
+    {
+      "name": "Miniflux",
+      "url": "https://miniflux.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/miniflux.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "miniflux"
+    },
+    {
+      "name": "Prometheus",
+      "url": "https://prometheus.ragtag.club",
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/prometheus.png",
+      "target": "_blank",
+      "url_template": "https://$name$.ragtag.club",
+      "service": "prometheus"
+    },
+    {
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/brother.png",
+      "name": "ql820nwb",
+      "target": "_blank",
+      "url": "https://ql820nwb.ragtag.club"
+    },
+    {
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/icecast.png",
       "name": "Icecast",
-      "icon": "di:icecast",
-      "url": "https://radio.ragtag.club",
-      "target": "_blank"
+      "target": "_blank",
+      "url": "https://radio.ragtag.club"
+    },
+    {
+      "icon": "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/sunshine.png",
+      "name": "Sunshine",
+      "target": "_blank",
+      "url": "https://sunshine.ragtag.club"
     }
-  ]
+  ],
+  "services": {
+    "target": "_blank",
+    "url_template": "https://$name$.ragtag.club"
+  },
+  "subtitle": "Services hosted on my Homelab cluster",
+  "title": "Homelab Services",
+  "path": "/nix/store/d494h05svr7y6xkpaa2pz8w056znvmhd-quickHome-settings.json"
 }
