@@ -1,16 +1,17 @@
-flake: { config, lib, pkgs, ... }:
-
-with lib;
-
-let
+flake: {
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
   cfg = config.services.quickHome;
   quick-home = flake.packages.${pkgs.stdenv.hostPlatform.system}.default;
   settingsFile = pkgs.writeTextFile {
     name = "quickHome-settings.json";
     text = builtins.toJSON cfg.settings;
   };
-in
-{
+in {
   options.services.quickHome = {
     enable = mkEnableOption "Quick Home Service";
 
@@ -34,11 +35,11 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.hello ];
+    environment.systemPackages = [pkgs.hello];
 
     systemd.services.quickHome = {
-      wantedBy = [ "multi-user.target" ];
-      after = [ "network.target" ];
+      wantedBy = ["multi-user.target"];
+      after = ["network.target"];
       environment = {
         NODE_ENV = "production";
         NITRO_PORT = toString cfg.port;

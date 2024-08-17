@@ -3,14 +3,14 @@
   "subtitle": "This is an example, customize it for your own needs",
   "columns": 4,
   "services": {
-    "url_template": "https://$name$.ragtag.club",
+    "url_template": "https://$name$.example.com",
     "target": "_blank"
   },
   "items": [
     {
       "name": "Home Assistant",
       "icon": "di:home-assistant",
-      "url": "https://home.tyler.fail",
+      "url": "https://home.example.com",
       "target": "_blank"
     },
     "jellyfin",
@@ -28,6 +28,8 @@
     "paperless",
     "gatus",
     "homer",
+    "random",
+    "notreal",
     "ntfy",
     "grafana",
     "microbin",

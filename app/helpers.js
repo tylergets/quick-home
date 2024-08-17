@@ -23,6 +23,7 @@ export function getPossiblePaths() {
 export function getSettingsPath() {
 
     for (const path of getPossiblePaths()) {
+        console.log(`Possible path: ${path}`);
         if (path && fs.existsSync(path)) {
             return path;
         }

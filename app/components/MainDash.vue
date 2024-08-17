@@ -19,7 +19,9 @@
 
     <div>
 <!--      <ListView :data="data"/>-->
-      <ColView :data="data"/>
+      <ClientOnly>
+        <ColView :data="data"/>
+      </ClientOnly>
     </div>
   </div>
 </template>

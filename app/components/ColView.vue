@@ -1,4 +1,6 @@
 <script setup >
+import ColEntry from "~/components/ColEntry.vue";
+
 const props = defineProps({
   data: Object
 })
@@ -26,13 +28,7 @@ const columnsWithItems = computed(() => {
     <div class="flex-1" v-for="column in columnsWithItems">
         <div class="px-4">
           <div v-for="item in column">
-            <a :href="item.url" :target="item.target" class="flex gap-4 border-b-2 py-3">
-              <img :src="item.icon" :alt="item.name" class="h-10" >
-              <div>
-                <div>{{item.name}}</div>
-                <div class="text-gray-400 text-xs">{{item.url}}</div>
-              </div>
-            </a>
+            <ColEntry :item="item"/>
           </div>
         </div>
     </div>

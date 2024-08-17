@@ -1,6 +1,4 @@
 import * as fs from "fs";
-import {serializeError, deserializeError} from 'serialize-error';
-import os from "os";
 import {getSettingsPath} from "~/helpers";
 import YAML from 'yaml'
 
