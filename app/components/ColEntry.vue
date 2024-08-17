@@ -30,7 +30,7 @@ function onImgError(e) {
     <img @error.native="onImgError" :src="imageUrl" :alt="item.name" class="h-10" >
     <div>
       <div>{{item.name}}</div>
-      <div class="text-gray-400 text-xs">{{imageUrl}}</div>
+      <div class="text-gray-400 text-xs">{{item.url}}</div>
     </div>
   </a>
 </template>
